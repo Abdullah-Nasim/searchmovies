@@ -6,4 +6,5 @@
     <string name="popular_movies">Popular Movies</string>
     <string name="openDrawer">open_drawer</string>
     <string name="closeDrawer">close_drawer</string>
+    <string name="top_rated">Top Rated</string>
 </resources>

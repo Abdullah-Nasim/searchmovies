@@ -16,14 +16,20 @@
         <include
             layout="@layout/app_bar_main"/>
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/host_recycler"
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/main_swipe_refresh"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingTop="7dp"
-            android:paddingBottom="7dp"
+            >
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/main_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:clipToPadding="false">
         </android.support.v7.widget.RecyclerView>
+
+        </android.support.v4.widget.SwipeRefreshLayout>
 
     </LinearLayout>
 

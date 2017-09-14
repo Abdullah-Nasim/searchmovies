@@ -9,7 +9,7 @@ import myown.searchmovies.R;
 
 public class SplashActivity extends AppCompatActivity {
 
-    private static final long SPLASH_LENGTH = 1000;
+    private static final long SPLASH_LENGTH = 3000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

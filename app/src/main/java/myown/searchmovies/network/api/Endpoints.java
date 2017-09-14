@@ -5,4 +5,9 @@ package myown.searchmovies.network.api;
  */
 
 public class Endpoints {
+
+    public static final String Popular_Endpoint = "popular";
+
+    public static final String Top_Rated_Endpoint = "top_rated";
+
 }

@@ -10,4 +10,6 @@ public class Constants {
 
     public static String Base_URL = "https://api.themoviedb.org/3/movie/";
 
+    public static String Image_Base_URL = "http://image.tmdb.org/t/p/w342/";
+
 }
