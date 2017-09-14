@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Search Movies</string>
+    <string name="popular">Popular</string>
+    <string name="top">Top</string>
+    <string name="search">Search</string>
+    <string name="popular_movies">Popular Movies</string>
+    <string name="openDrawer">open_drawer</string>
+    <string name="closeDrawer">close_drawer</string>
 </resources>
