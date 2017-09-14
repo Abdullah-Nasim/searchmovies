@@ -1,7 +1,9 @@
-package myown.searchmovies;
+package myown.searchmovies.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import myown.searchmovies.R;
 
 public class SplashActivity extends AppCompatActivity {
 
