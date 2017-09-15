@@ -6,6 +6,8 @@ package myown.searchmovies;
 
 public class Constants {
 
+    //Defining constants particular to the application
+
     public static String Api_Key = "41e1c82dd477063faa807916cf6f74e1";
 
     public static String Base_URL = "https://api.themoviedb.org/3/";

@@ -103,7 +103,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
         //Show the full screen progress while the data is fetched
         Utils.showFullScreenProgress(progressLayout);
 
-        ApiCalls.getMovieDetails(movieId.toString(), new MovieDetailsResultListener() {
+        ApiCalls.getMovieDetails(MovieDetailsActivity.this, movieId.toString(), new MovieDetailsResultListener() {
             @Override
             public void onMovieDetailsResult(MovieDetailsResponse movieDetailsResponse) {
 

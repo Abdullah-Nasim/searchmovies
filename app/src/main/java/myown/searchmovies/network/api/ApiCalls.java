@@ -115,7 +115,7 @@ public class ApiCalls {
     }
 
     //Calling the api to get the movie details
-    public static void getMovieDetails(String movieId, final MovieDetailsResultListener mListener){
+    public static void getMovieDetails(final Context context, String movieId, final MovieDetailsResultListener mListener){
 
         MoviesDetailsBAL.getMoviesDetails(movieId, new MoviesDetailsFetchListener() {
             @Override
@@ -127,27 +127,27 @@ public class ApiCalls {
 
             @Override
             public void onMoviesDetailsNotFetched() {
-
+                Utils.onResponseIssueException(context);
             }
 
             @Override
             public void onNetworkFailure() {
-
+                Utils.noInternetException(context);
             }
 
             @Override
             public void onResponseIssue() {
-
+                Utils.unableToFetchDataException(context);
             }
 
             @Override
             public void onRequestTimeout() {
-
+                Utils.unableToFetchDataException(context);
             }
 
             @Override
             public void onException(String errorMessage) {
-
+                Utils.unableToFetchDataException(context);
             }
         });
     }

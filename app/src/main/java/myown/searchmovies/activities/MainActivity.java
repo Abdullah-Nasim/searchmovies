@@ -119,13 +119,6 @@ public class MainActivity extends AppCompatActivity{
 
                     case R.id.nav_search_item:
 
-                        //Setting the checked navigation menu item
-                        if(navItemIndex == 0){
-                            navigationView.getMenu().getItem(0).setChecked(true);
-                        }else if (navItemIndex == 1){
-                            navigationView.getMenu().getItem(1).setChecked(true);
-                        }
-
                         //Calling Navigation Controller to start search activity
                         NavigationController.startSearchMovieActivity(MainActivity.this);
                         break;

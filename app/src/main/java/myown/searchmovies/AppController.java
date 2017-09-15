@@ -18,7 +18,7 @@ public class AppController extends Application {
     public void onCreate() {
         super.onCreate();
 
-        //Initializing the fabric.io crashlytics
+        //Initializing fabric.io crashlytics
         Fabric.with(this, new Crashlytics());
 
         //Initializing fresco

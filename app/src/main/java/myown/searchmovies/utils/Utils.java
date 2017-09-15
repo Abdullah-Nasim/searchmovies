@@ -19,14 +19,17 @@ import myown.searchmovies.network.models.MovieDetailsResponse;
 
 public class Utils {
 
+    //The following method is responsible to show full screen progress bar
     public static void showFullScreenProgress(FrameLayout progressLayout){
         progressLayout.setVisibility(View.VISIBLE);
     }
 
+    //The following methos is responsible to hide full screen progress bar
     public static void hideFullScreenProgress(FrameLayout progressLayout){
         progressLayout.setVisibility(View.GONE);
     }
 
+    //The following method is used to process the array for material search view in required format
     public static String[] prepareSearchResultsArray(List<KeywordsSearchResponse.Result> movies){
 
         String[] resultsArray = new String[movies.size() ];
@@ -51,6 +54,7 @@ public class Utils {
         showAlertDialog(context.getString(R.string.server_error_messege), context);
     }
 
+    //The following method is used to process genres in specified format
     public static String processGenres (List<MovieDetailsResponse.Genre> genres){
 
         String genresString = "";
@@ -62,6 +66,7 @@ public class Utils {
         return genresString;
     }
 
+    //The following method is used to build and show the alert dialog
     public static void showAlertDialog(String msg, Context context){
         final AlertDialog.Builder builder;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -80,6 +85,7 @@ public class Utils {
                 .show();
     }
 
+    //The following method is used to force crash the application in order to text crashlytics
     public void forceCrash() {
         throw new RuntimeException("This is a crash");
     }
