@@ -6,8 +6,14 @@ package myown.searchmovies.network.api;
 
 public class Endpoints {
 
-    public static final String Popular_Endpoint = "popular";
+    //Defining the end points of the API
 
-    public static final String Top_Rated_Endpoint = "top_rated";
+    public static final String Popular_Endpoint = "movie/popular";
+
+    public static final String Top_Rated_Endpoint = "movie/top_rated";
+
+    public static final String Search_Keywords_Endpoint = "search/keyword";
+
+    public static final String Search_Movie_Endpoint = "search/movie";
 
 }

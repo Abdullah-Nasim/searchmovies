@@ -20,9 +20,11 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable(){
             @Override
             public void run() {
+
                 //Call the NavigationController to start main activity
                 NavigationController.startMainActivity(SplashActivity.this);
                 finish();
+
             }
         }, SPLASH_LENGTH);
     }

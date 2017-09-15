@@ -13,11 +13,11 @@ import retrofit2.Response;
  * Created by Netaq on 9/14/2017.
  */
 
-public class TopRatedMoviesBAL {
+public class MovieSearchBAL {
 
-    public static void getPopularMovies(int page, final MoviesFetchListener listener){
+    public static void movieSearch(String query, final MoviesFetchListener listener){
 
-        Call<MoviesResponse> call = RestClient.getAdapter().getTopRatedMovies(Constants.Api_Key, "en-US", page);
+        Call<MoviesResponse> call = RestClient.getAdapter().searchMovie(Constants.Api_Key, "en-US", query, 1);
 
         call.enqueue(new Callback<MoviesResponse>() {
             @Override
@@ -29,7 +29,7 @@ public class TopRatedMoviesBAL {
                     //Check if response dose not contain empty array
                     if (response.body().getResults().size() != 0) {
 
-                        //Top Rated Movies successfully fetched
+                        //Movie successfully fetched
                         listener.onMoviesFetched(response.body());
 
                     } else {

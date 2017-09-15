@@ -22,6 +22,12 @@
 
         <activity android:name=".activities.MainActivity"/>
         <activity android:name=".activities.MovieDetailsActivity"/>
+        <activity android:name=".activities.SearchMovieActivity"/>
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="22113b54d39d6d3f925198786e0374e4383ed6ce"
+            />
 
     </application>
 

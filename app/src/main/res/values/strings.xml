@@ -7,4 +7,8 @@
     <string name="openDrawer">open_drawer</string>
     <string name="closeDrawer">close_drawer</string>
     <string name="top_rated">Top Rated</string>
+    <string name="error">Error</string>
+    <string name="no_internet_messege">Unable to connect to the internet. Please check your internet connection and try again!</string>
+    <string name="response_error_messege">Unable to fetch the data! Please try again later</string>
+    <string name="server_error_messege">Unable to connect to the servers! Please try again later</string>
 </resources>

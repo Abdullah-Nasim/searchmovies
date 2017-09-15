@@ -29,7 +29,7 @@ public class MoviesDetailsBAL {
                     //Check if response dose not contain empty body
                     if (response.body() != null) {
 
-                        //Popular Movie details successfully fetched
+                        //Movie details successfully fetched
                         listener.onMoviesDetailsFetched(response.body());
 
                     } else {

@@ -23,7 +23,9 @@ public class MainRecyclerViewHolder extends RecyclerView.ViewHolder {
     public TextView movieName;
 
     public MainRecyclerViewHolder(View itemView) {
+
         super(itemView);
         ButterKnife.bind(this,itemView);
+
     }
 }

@@ -46,7 +46,10 @@ public class MainRecyclerAdapter extends RecyclerView.Adapter<MainRecyclerViewHo
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                //Call the navigation controller to start movie details activity
                 NavigationController.startMovieDetailsActivity(mContext, mDataSet.get(position).getId());
+
             }
         });
 
@@ -57,9 +60,13 @@ public class MainRecyclerAdapter extends RecyclerView.Adapter<MainRecyclerViewHo
         return mDataSet.size();
     }
 
+    //The following function is responsible of adding more movies in the previous data set
     public void loadMore (ArrayList<MoviesResponse.Result> moreMovies){
+
         for (MoviesResponse.Result mr : moreMovies){
+
             mDataSet.add(mr);
+
         }
     }
 }

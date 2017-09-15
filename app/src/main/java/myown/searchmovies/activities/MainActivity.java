@@ -21,6 +21,7 @@ import myown.searchmovies.activities.adapters.MainRecyclerAdapter;
 import myown.searchmovies.network.api.ApiCalls;
 import myown.searchmovies.network.api.interfaces.MoviesResultsListener;
 import myown.searchmovies.network.models.MoviesResponse;
+import myown.searchmovies.utils.NavigationController;
 
 /**
  * Created by Netaq on 9/14/2017.
@@ -95,24 +96,40 @@ public class MainActivity extends AppCompatActivity{
                 switch (menuItem.getItemId()) {
 
                     case R.id.nav_popular_item:
-                        if(navItemIndex !=0 ){
+
+                        //Check the current selected navigation item
+                        if(navItemIndex != 0 ){
                             navItemIndex = 0;
                             toolbar.setTitle(R.string.popular);
                             initMainRecycler();
                         }
+
                         break;
 
                     case R.id.nav_top_item:
-                        if(navItemIndex !=1 ){
+
+                        //Check the current selected navigation item
+                        if(navItemIndex != 1 ){
                             navItemIndex = 1;
                             toolbar.setTitle(R.string.top_rated);
                             initMainRecycler();
                         }
+
                         break;
 
                     case R.id.nav_search_item:
-                        navItemIndex = 2;
+
+                        //Setting the checked navigation menu item
+                        if(navItemIndex == 0){
+                            navigationView.getMenu().getItem(0).setChecked(true);
+                        }else if (navItemIndex == 1){
+                            navigationView.getMenu().getItem(1).setChecked(true);
+                        }
+
+                        //Calling Navigation Controller to start search activity
+                        NavigationController.startSearchMovieActivity(MainActivity.this);
                         break;
+
                     default:
                         navItemIndex = 0;
                 }
@@ -156,7 +173,7 @@ public class MainActivity extends AppCompatActivity{
         if(navItemIndex == 0) {
 
             //Calling the popular movies API with respective parameters
-            ApiCalls.getPopularMovies(currentPage, swipeRefresh, new MoviesResultsListener() {
+            ApiCalls.getPopularMovies(MainActivity.this, currentPage, swipeRefresh, new MoviesResultsListener() {
 
                 @Override
                 public void onResultsFound(MoviesResponse moviesResponse) {
@@ -175,7 +192,7 @@ public class MainActivity extends AppCompatActivity{
         }else if(navItemIndex == 1){
 
             //Calling the top rated movies API with respective parameters
-            ApiCalls.getTopRatedMovies(currentPage, swipeRefresh, new MoviesResultsListener() {
+            ApiCalls.getTopRatedMovies(MainActivity.this, currentPage, swipeRefresh, new MoviesResultsListener() {
 
                 @Override
                 public void onResultsFound(MoviesResponse moviesResponse) {
@@ -216,7 +233,7 @@ public class MainActivity extends AppCompatActivity{
                         if(navItemIndex == 0) {
 
                             // Again making the api call incrementing the page with 1
-                            ApiCalls.getPopularMovies(++currentPage, swipeRefresh, new MoviesResultsListener() {
+                            ApiCalls.getPopularMovies(MainActivity.this, ++currentPage, swipeRefresh, new MoviesResultsListener() {
                                 @Override
                                 public void onResultsFound(MoviesResponse moviesResponse) {
 
@@ -231,7 +248,7 @@ public class MainActivity extends AppCompatActivity{
                         }else if(navItemIndex == 1){
 
                             // Again making the api call incrementing the page with 1
-                            ApiCalls.getTopRatedMovies(++currentPage, swipeRefresh, new MoviesResultsListener() {
+                            ApiCalls.getTopRatedMovies(MainActivity.this, ++currentPage, swipeRefresh, new MoviesResultsListener() {
                                 @Override
                                 public void onResultsFound(MoviesResponse moviesResponse) {
 

@@ -27,7 +27,7 @@ public class PopularMoviesBAL {
                 if(response.isSuccessful()) {
 
                     //Check if response dose not contain empty array
-                    if (response.body() != null) {
+                    if (response.body().getResults().size() != 0) {
 
                         //Popular Movies successfully fetched
                         listener.onMoviesFetched(response.body());
