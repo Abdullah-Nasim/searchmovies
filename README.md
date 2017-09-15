@@ -1,5 +1,5 @@
 # Search Movies
-The application which uses TMDB api as a base to list down popular and to rated movies.
+The application which uses TMDB api as a base to list down popular and top rated movies.
 
 # Libraries Used
 
