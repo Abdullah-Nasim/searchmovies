@@ -1,4 +1,4 @@
-package myown.searchmovies.network.bals.interfaces;
+package myown.searchmovies.network.api.interfaces;
 
 import myown.searchmovies.network.models.MoviesResponse;
 
@@ -6,7 +6,7 @@ import myown.searchmovies.network.models.MoviesResponse;
  * Created by Netaq on 9/14/2017.
  */
 
-public interface ResultsListener {
+public interface MoviesResultsListener {
 
     void onResultsFound(MoviesResponse moviesResponse);
 }

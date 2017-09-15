@@ -1,5 +1,6 @@
 package myown.searchmovies.network.models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,7 +50,7 @@ public class MoviesResponse {
     public class Result
     {
         public int vote_count;
-        public int id;
+        public Integer id;
         public boolean video;
         public double vote_average;
         public String title;
@@ -71,11 +72,11 @@ public class MoviesResponse {
             this.vote_count = vote_count;
         }
 
-        public int getId() {
+        public Integer getId() {
             return id;
         }
 
-        public void setId(int id) {
+        public void setId(Integer id) {
             this.id = id;
         }
 

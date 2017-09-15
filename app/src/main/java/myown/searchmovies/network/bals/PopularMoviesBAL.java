@@ -31,6 +31,7 @@ public class PopularMoviesBAL {
 
                         //Popular Movies successfully fetched
                         listener.onMoviesFetched(response.body());
+
                     } else {
                         listener.onMoviesNotFetched();
                     }

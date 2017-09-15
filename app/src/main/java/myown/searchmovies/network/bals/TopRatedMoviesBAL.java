@@ -29,8 +29,9 @@ public class TopRatedMoviesBAL {
                     //Check if response dose not contain empty array
                     if (response.body() != null) {
 
-                        //Popular Movies successfully fetched
+                        //Top Rated Movies successfully fetched
                         listener.onMoviesFetched(response.body());
+
                     } else {
                         listener.onMoviesNotFetched();
                     }

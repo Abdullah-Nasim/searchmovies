@@ -11,8 +11,8 @@ public class MovieDetailsResponse
 {
     public boolean adult;
     public String backdrop_path;
-    public String belongs_to_collection;
-    public int budget;
+    public BelongsToCollection belongs_to_collection;
+    public Integer budget;
     public List<Genre> genres;
     public String homepage;
     public int id;
@@ -51,19 +51,19 @@ public class MovieDetailsResponse
         this.backdrop_path = backdrop_path;
     }
 
-    public String getBelongs_to_collection() {
+    public BelongsToCollection getBelongs_to_collection() {
         return belongs_to_collection;
     }
 
-    public void setBelongs_to_collection(String belongs_to_collection) {
+    public void setBelongs_to_collection(BelongsToCollection belongs_to_collection) {
         this.belongs_to_collection = belongs_to_collection;
     }
 
-    public int getBudget() {
+    public Integer getBudget() {
         return budget;
     }
 
-    public void setBudget(int budget) {
+    public void setBudget(Integer budget) {
         this.budget = budget;
     }
 
@@ -320,6 +320,46 @@ public class MovieDetailsResponse
 
         public void setName(String name) {
             this.name = name;
+        }
+    }
+
+    public class BelongsToCollection
+    {
+        public int id;
+        public String name;
+        public String poster_path;
+        public String backdrop_path;
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getPoster_path() {
+            return poster_path;
+        }
+
+        public void setPoster_path(String poster_path) {
+            this.poster_path = poster_path;
+        }
+
+        public String getBackdrop_path() {
+            return backdrop_path;
+        }
+
+        public void setBackdrop_path(String backdrop_path) {
+            this.backdrop_path = backdrop_path;
         }
     }
 }

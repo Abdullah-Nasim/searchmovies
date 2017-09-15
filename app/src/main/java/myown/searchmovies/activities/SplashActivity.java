@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import myown.searchmovies.R;
+import myown.searchmovies.utils.NavigationController;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -19,9 +20,8 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable(){
             @Override
             public void run() {
-                /* Create an Intent that will start the Main-Activity. */
-                Intent mainIntent = new Intent(SplashActivity.this,MainActivity.class);
-                startActivity(mainIntent);
+                //Call the NavigationController to start main activity
+                NavigationController.startMainActivity(SplashActivity.this);
                 finish();
             }
         }, SPLASH_LENGTH);

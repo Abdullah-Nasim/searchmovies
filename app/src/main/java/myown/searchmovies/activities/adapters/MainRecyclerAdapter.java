@@ -4,6 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
@@ -12,6 +13,7 @@ import myown.searchmovies.Constants;
 import myown.searchmovies.R;
 import myown.searchmovies.activities.viewholders.MainRecyclerViewHolder;
 import myown.searchmovies.network.models.MoviesResponse;
+import myown.searchmovies.utils.NavigationController;
 
 /**
  * Created by Netaq on 9/14/2017.
@@ -37,10 +39,16 @@ public class MainRecyclerAdapter extends RecyclerView.Adapter<MainRecyclerViewHo
     }
 
     @Override
-    public void onBindViewHolder(MainRecyclerViewHolder holder, int position) {
+    public void onBindViewHolder(MainRecyclerViewHolder holder, final int position) {
 
         holder.movieName.setText(mDataSet.get(position).getTitle());
         holder.moviePoster.setImageURI(Uri.parse(Constants.Image_Base_URL + mDataSet.get(position).getPoster_path()));
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavigationController.startMovieDetailsActivity(mContext, mDataSet.get(position).getId());
+            }
+        });
 
     }
 

@@ -19,7 +19,7 @@ import butterknife.ButterKnife;
 import myown.searchmovies.R;
 import myown.searchmovies.activities.adapters.MainRecyclerAdapter;
 import myown.searchmovies.network.api.ApiCalls;
-import myown.searchmovies.network.bals.interfaces.ResultsListener;
+import myown.searchmovies.network.api.interfaces.MoviesResultsListener;
 import myown.searchmovies.network.models.MoviesResponse;
 
 /**
@@ -81,7 +81,10 @@ public class MainActivity extends AppCompatActivity{
 
     private void setupNavigationDrawer() {
 
-    //Setting Navigation View Item Selected Listener to handle the item click of the navigation menu
+        //set the first item in navigation menu as checked
+        navigationView.getMenu().getItem(0).setChecked(true);
+
+        //Setting Navigation View Item Selected Listener to handle the item click of the navigation menu
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
 
             // This method will trigger on item Click of navigation menu
@@ -153,7 +156,7 @@ public class MainActivity extends AppCompatActivity{
         if(navItemIndex == 0) {
 
             //Calling the popular movies API with respective parameters
-            ApiCalls.getPopularMovies(currentPage, swipeRefresh, new ResultsListener() {
+            ApiCalls.getPopularMovies(currentPage, swipeRefresh, new MoviesResultsListener() {
 
                 @Override
                 public void onResultsFound(MoviesResponse moviesResponse) {
@@ -172,7 +175,7 @@ public class MainActivity extends AppCompatActivity{
         }else if(navItemIndex == 1){
 
             //Calling the top rated movies API with respective parameters
-            ApiCalls.getTopRatedMovies(currentPage, swipeRefresh, new ResultsListener() {
+            ApiCalls.getTopRatedMovies(currentPage, swipeRefresh, new MoviesResultsListener() {
 
                 @Override
                 public void onResultsFound(MoviesResponse moviesResponse) {
@@ -213,7 +216,7 @@ public class MainActivity extends AppCompatActivity{
                         if(navItemIndex == 0) {
 
                             // Again making the api call incrementing the page with 1
-                            ApiCalls.getPopularMovies(++currentPage, swipeRefresh, new ResultsListener() {
+                            ApiCalls.getPopularMovies(++currentPage, swipeRefresh, new MoviesResultsListener() {
                                 @Override
                                 public void onResultsFound(MoviesResponse moviesResponse) {
 
@@ -228,7 +231,7 @@ public class MainActivity extends AppCompatActivity{
                         }else if(navItemIndex == 1){
 
                             // Again making the api call incrementing the page with 1
-                            ApiCalls.getTopRatedMovies(++currentPage, swipeRefresh, new ResultsListener() {
+                            ApiCalls.getTopRatedMovies(++currentPage, swipeRefresh, new MoviesResultsListener() {
                                 @Override
                                 public void onResultsFound(MoviesResponse moviesResponse) {
 
